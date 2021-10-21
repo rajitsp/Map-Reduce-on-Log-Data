@@ -1,5 +1,5 @@
 # Map Reduce on Log Data
-###Description : Design and Implement Map-Reduce computational model on log data and perform analysis.
+### Description : Design and Implement Map-Reduce computational model on log data and perform analysis.
 
 ## Overview
 As part of this project, a MapReduce program is created for the parallel processing of a synthetically generated log data. The data contains records for computations at discrete time-steps
@@ -12,7 +12,7 @@ The map/reduce jobs created are :
 3) Quantifying and aggregating generated log messages for each type.
 4) Number of characters in each log message for each log message type that contain the highest number of characters in the detected instances of the log message.
 
-##Prerequisites and Installation
+## Prerequisites and Installation
 
 - Setup Hadoop environment on target system. Depending on the type of OS please refer official documentaion of [Apache Hadoop](http://hadoop.apache.org/) or various blogs on Google.
 
@@ -58,16 +58,16 @@ The map/reduce jobs created are :
       stop-yarn.sh
       stop-dfs.sh
       ```
-##Map Reduce Tasks
+## Map Reduce Tasks
     
-###Task 1
+### Task 1
 
 - Mapper Class: ```TimeTypeMapper``` 
     - creates a key with time interval and type of log and value of 1
 - Reducer Class: ```TimeTypeReducer```
     - reduces the mapper output to key: timeinterval_logtype and value:total occurences
   
-###Task 2
+### Task 2
 
 - Mapper Class1 : ```ErrorMapper```
     - creates time interval keys which have "ERROR" log type with value 1
@@ -78,7 +78,7 @@ The map/reduce jobs created are :
 - Reducer Class1 : ```Reduce2```
     - reduces to key with count and value with time intervals of those counts 
     
-###Task 3
+### Task 3
 
 - Mapper Class : ```MapperToken```
     - Creates key with type of log and value as 1
@@ -86,7 +86,7 @@ The map/reduce jobs created are :
 - Reducer Class : ```SumInt```
     - sums up values to give total number of specific type(ERROR, INFO, WARN, DEBUG) of logs
 
-###Task 4
+### Task 4
 
 - Mapper Class : ``` CharMapper``` 
     - Maps keys to type of log and value to its length
